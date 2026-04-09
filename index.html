@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  
+    <title>Public Portal | Seamless Service Assistance & Document Management</title>
+  
+    <meta name="description" content="Access reliable government and private service assistance. Manage documents, track applications, and view transactions securely. Privacy and Terms compliant.">
+
+  <meta property="og:title" content="Public Portal | Service Assistance">
+  <meta property="og:description" content="Access trusted service assistance, manage documents, and track applications securely.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="icons/Icon-512.png"> 
+  <meta property="og:url" content="https://portal-one-silk.vercel.app/"> 
+
+    <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Public Portal">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+      <link rel="icon" type="image/png" href="favicon.png?v=2.0"/> 
+  
+  <meta name="google-signin-client_id" content="827582841942-7vp93v9jq0jt0kj5vqm8149t0vc1dci2.apps.googleusercontent.com">
+
+  <title>Public Portal</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <script>
+    // 🎯 CRITICAL FIX: Yeh object FlutterFire Web plugin (Dart) ko config provide karta hai.
+    window.flutterfire_options = {
+        apiKey: "AIzaSyAACANh3PYkvxmm8_gXhh0hw8b9m2MO8hA",
+        authDomain: "my-forms-app-c889f.firebaseapp.com", 
+        projectId: "my-forms-app-c889f",
+        storageBucket: "my-forms-app-c889f.firebasestorage.app", 
+        messagingSenderId: "827582841942",
+        appId: "1:827582841942:web:5af755bbdfab9590f7e7f7",
+    };
+  </script>
+  </head>
+<body>
+  <script src='https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.min.mjs' type='module'></script>
+  <script type='module'>
+  var { pdfjsLib } = globalThis;
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.worker.mjs';
+
+  var pdfRenderOptions = {
+    cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/cmaps/',
+    cMapPacked: true,
+  }
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
