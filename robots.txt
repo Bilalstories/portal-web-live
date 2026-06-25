@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://portal-one-silk.vercel.app/sitemap.xml

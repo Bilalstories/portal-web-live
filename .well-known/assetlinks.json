@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.publicportal.gms",
+      "sha256_cert_fingerprints": [
+        "16:95:14:7A:18:90:30:8F:F4:CF:C3:63:F2:56:0B:CE:95:6F:BB:44:6F:69:CC:5D:C0:4B:F7:B8:D4:FC:8C:42"
+      ]
+    }
+  }
+]
