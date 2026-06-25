@@ -1,56 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- ============================================================
+  ✅ GOOGLE SEARCH CONSOLE VERIFICATION (Aapki screenshot wali)
+  ============================================================ -->
+  <meta name="google-site-verification" content="BeJxpsZiWw79Ucc">
+
+  <!-- ============================================================
+  BASE & META CHARSET
+  ============================================================ -->
   <base href="/">
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- ✅ Title (Sirf Ek Baar) -->
-  <title>Public Portal | Government & Private Services, Job Alerts, Document Tracking</title>
-  
-  <!-- ✅ Meta Description -->
-  <meta name="description" content="Access reliable government and private services. Apply for jobs, track complaints, verify documents, and manage your wallet securely on Public Portal.">
-  
-  <!-- ✅ Keywords (Bing/Other search engines ke liye) -->
-  <meta name="keywords" content="Public Portal, government services, job alerts, complaint box, document tracking, wallet, referral, earn, digital services">
-  
-  <!-- ✅ Robots (Index + Follow) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+
+  <!-- ============================================================
+  TITLE (Sirf Ek Baar - SEO ke liye perfect)
+  ============================================================ -->
+  <title>Public Portal | Government Services, Job Alerts & Document Tracking</title>
+
+  <!-- ============================================================
+  SEO META TAGS
+  ============================================================ -->
+  <meta name="description" content="Access reliable government and private services. Apply for jobs, track complaints, verify documents, manage wallet, and earn referral rewards on Public Portal.">
+  <meta name="keywords" content="Public Portal, government services, job alerts, complaint box, document tracking, digital wallet, referral earn, online services, public portal app, Sarkari seva">
   <meta name="robots" content="index, follow">
-  
-  <!-- ✅ Canonical URL (Sab se zaroori) -->
+
+  <!-- ============================================================
+  CANONICAL URL (Duplicate content se bachata hai)
+  ============================================================ -->
   <link rel="canonical" href="https://portal-one-silk.vercel.app/">
-  
-  <!-- ✅ Open Graph (Social Media Sharing) -->
+
+  <!-- ============================================================
+  OPEN GRAPH (Facebook, WhatsApp, LinkedIn Sharing)
+  ============================================================ -->
   <meta property="og:title" content="Public Portal - Govt & Private Services">
   <meta property="og:description" content="Job Alerts, Complaint Box, Document Tracking, Wallet & Refer & Earn.">
   <meta property="og:image" content="https://portal-one-silk.vercel.app/icons/Icon-512.png">
   <meta property="og:url" content="https://portal-one-silk.vercel.app/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Public Portal">
-  
-  <!-- ✅ Twitter Card -->
+  <meta property="og:locale" content="en_IN">
+
+  <!-- ============================================================
+  TWITTER CARD (Twitter/X Sharing)
+  ============================================================ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Public Portal - Govt & Private Services">
   <meta name="twitter:description" content="Job Alerts, Complaint Box, Document Tracking, Wallet & Refer & Earn.">
   <meta name="twitter:image" content="https://portal-one-silk.vercel.app/icons/Icon-512.png">
-  
-  <!-- ✅ Theme Color (Mobile Browser) -->
+
+  <!-- ============================================================
+  THEME COLOR (Browser Tab Color)
+  ============================================================ -->
   <meta name="theme-color" content="#1E293B">
-  
-  <!-- ✅ Mobile Web App -->
+  <meta name="color-scheme" content="light dark">
+
+  <!-- ============================================================
+  MOBILE WEB APP (PWA / Home Screen)
+  ============================================================ -->
   <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Public Portal">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
-  
-  <!-- ✅ Favicon -->
+
+  <!-- ============================================================
+  FAVICON
+  ============================================================ -->
   <link rel="icon" type="image/png" href="favicon.png?v=2.0"/>
-  
-  <!-- ✅ Google Sign-In -->
+
+  <!-- ============================================================
+  GOOGLE SIGN-IN CONFIG
+  ============================================================ -->
   <meta name="google-signin-client_id" content="827582841942-7vp93v9jq0jt0kj5vqm8149t0vc1dci2.apps.googleusercontent.com">
-  
-  <!-- ✅ JSON-LD Structured Data (Game Changer for SEO) -->
+
+  <!-- ============================================================
+  JSON-LD STRUCTURED DATA (Google Rich Results ke liye GAME CHANGER)
+  ============================================================ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -58,7 +85,7 @@
     "name": "Public Portal",
     "url": "https://portal-one-silk.vercel.app/",
     "description": "Public Portal provides government service applications, job alerts, complaint tracking, document verification, and digital wallet services.",
-    "applicationCategory": "Government Application",
+    "applicationCategory": "GovernmentApplication",
     "operatingSystem": "All",
     "browserRequirements": "Requires JavaScript",
     "offers": {
@@ -69,20 +96,30 @@
     "author": {
       "@type": "Organization",
       "name": "Public Portal"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Bilal Majid Patel"
     }
   }
   </script>
-  
-  <!-- ✅ Manifest -->
+
+  <!-- ============================================================
+  MANIFEST (PWA Setup)
+  ============================================================ -->
   <link rel="manifest" href="manifest.json">
-  
-  <!-- ✅ Firebase SDK -->
+
+  <!-- ============================================================
+  FIREBASE SDK (Web Setup)
+  ============================================================ -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-  
-  <!-- ✅ Firebase Config -->
+
+  <!-- ============================================================
+  FIREBASE CONFIG (Flutter Web Plugin ke liye)
+  ============================================================ -->
   <script>
     window.flutterfire_options = {
         apiKey: "AIzaSyAACANh3PYkvxmm8_gXhh0hw8b9m2MO8hA",
@@ -93,17 +130,25 @@
         appId: "1:827582841942:web:5af755bbdfab9590f7e7f7",
     };
   </script>
+
 </head>
 <body>
+  <!-- ============================================================
+  PDF.JS SUPPORT (Aapke app ke liye)
+  ============================================================ -->
   <script src='https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.min.mjs' type='module'></script>
   <script type='module'>
-  var { pdfjsLib } = globalThis;
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.worker.mjs';
-  var pdfRenderOptions = {
-    cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/cmaps/',
-    cMapPacked: true,
-  }
+    var { pdfjsLib } = globalThis;
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.worker.mjs';
+    var pdfRenderOptions = {
+      cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/cmaps/',
+      cMapPacked: true,
+    };
   </script>
+
+  <!-- ============================================================
+  FLUTTER WEB BOOTSTRAP (App Loader)
+  ============================================================ -->
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
