@@ -1,61 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <base href="/">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>Public Portal | Seamless Service Assistance & Document Management</title>
+  <!-- ✅ Title (Sirf Ek Baar) -->
+  <title>Public Portal | Government & Private Services, Job Alerts, Document Tracking</title>
   
-    <meta name="description" content="Access reliable government and private service assistance. Manage documents, track applications, and view transactions securely. Privacy and Terms compliant.">
-
-  <meta property="og:title" content="Public Portal | Service Assistance">
-  <meta property="og:description" content="Access trusted service assistance, manage documents, and track applications securely.">
+  <!-- ✅ Meta Description -->
+  <meta name="description" content="Access reliable government and private services. Apply for jobs, track complaints, verify documents, and manage your wallet securely on Public Portal.">
+  
+  <!-- ✅ Keywords (Bing/Other search engines ke liye) -->
+  <meta name="keywords" content="Public Portal, government services, job alerts, complaint box, document tracking, wallet, referral, earn, digital services">
+  
+  <!-- ✅ Robots (Index + Follow) -->
+  <meta name="robots" content="index, follow">
+  
+  <!-- ✅ Canonical URL (Sab se zaroori) -->
+  <link rel="canonical" href="https://portal-one-silk.vercel.app/">
+  
+  <!-- ✅ Open Graph (Social Media Sharing) -->
+  <meta property="og:title" content="Public Portal - Govt & Private Services">
+  <meta property="og:description" content="Job Alerts, Complaint Box, Document Tracking, Wallet & Refer & Earn.">
+  <meta property="og:image" content="https://portal-one-silk.vercel.app/icons/Icon-512.png">
+  <meta property="og:url" content="https://portal-one-silk.vercel.app/">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="icons/Icon-512.png"> 
-  <meta property="og:url" content="https://portal-one-silk.vercel.app/"> 
-
-    <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Public Portal">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-      <link rel="icon" type="image/png" href="favicon.png?v=2.0"/> 
+  <meta property="og:site_name" content="Public Portal">
   
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Public Portal - Govt & Private Services">
+  <meta name="twitter:description" content="Job Alerts, Complaint Box, Document Tracking, Wallet & Refer & Earn.">
+  <meta name="twitter:image" content="https://portal-one-silk.vercel.app/icons/Icon-512.png">
+  
+  <!-- ✅ Theme Color (Mobile Browser) -->
+  <meta name="theme-color" content="#1E293B">
+  
+  <!-- ✅ Mobile Web App -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Public Portal">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png?v=2.0"/>
+  
+  <!-- ✅ Google Sign-In -->
   <meta name="google-signin-client_id" content="827582841942-7vp93v9jq0jt0kj5vqm8149t0vc1dci2.apps.googleusercontent.com">
-
-  <title>Public Portal</title>
-  <link rel="manifest" href="manifest.json">
-
+  
+  <!-- ✅ JSON-LD Structured Data (Game Changer for SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Public Portal",
+    "url": "https://portal-one-silk.vercel.app/",
+    "description": "Public Portal provides government service applications, job alerts, complaint tracking, document verification, and digital wallet services.",
+    "applicationCategory": "Government Application",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Public Portal"
+    }
+  }
+  </script>
+  
+  <!-- ✅ Manifest -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- ✅ Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-
+  
+  <!-- ✅ Firebase Config -->
   <script>
-    // 🎯 CRITICAL FIX: Yeh object FlutterFire Web plugin (Dart) ko config provide karta hai.
     window.flutterfire_options = {
         apiKey: "AIzaSyAACANh3PYkvxmm8_gXhh0hw8b9m2MO8hA",
-        authDomain: "my-forms-app-c889f.firebaseapp.com", 
+        authDomain: "my-forms-app-c889f.firebaseapp.com",
         projectId: "my-forms-app-c889f",
-        storageBucket: "my-forms-app-c889f.firebasestorage.app", 
+        storageBucket: "my-forms-app-c889f.firebasestorage.app",
         messagingSenderId: "827582841942",
         appId: "1:827582841942:web:5af755bbdfab9590f7e7f7",
     };
   </script>
-  </head>
+</head>
 <body>
   <script src='https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.min.mjs' type='module'></script>
   <script type='module'>
   var { pdfjsLib } = globalThis;
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.worker.mjs';
-
   var pdfRenderOptions = {
     cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/cmaps/',
     cMapPacked: true,
   }
   </script>
-  <script src="flutter_bootstrap.js" async></script>
+  <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
