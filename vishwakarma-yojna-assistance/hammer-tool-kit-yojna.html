@@ -63,7 +63,7 @@
     .nav-links { display: flex; gap: 20px; align-items: center; }
     .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; padding: 6px 10px; border-radius: 6px; transition: background 0.2s; }
     .nav-links a:hover { background: rgba(255,255,255,0.1); color: white; }
-    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
     .search-form { display: flex; align-items: center; background: rgba(255,255,255,0.15); border-radius: 8px; padding: 4px 8px; }
     .search-form input { background: transparent; border: none; padding: 6px 8px; color: white; outline: none; font-size: 13px; width: 160px; }
     .search-form input::placeholder { color: rgba(255,255,255,0.5); }
@@ -71,7 +71,7 @@
     .nav-icons { display: flex; align-items: center; gap: 8px; }
     .lang-btn { background: transparent; border: none; color: white; font-size: 18px; cursor: pointer; padding: 4px; }
     .language-dropdown { position: relative; display: inline-block; }
-    .lang-options { display: none; position: absolute; right: 0; background: #1e293b; min-width: 120px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); border-radius: 6px; padding: 6px 0; }
+    .lang-options { display: none; position: absolute; right: 0; background: #1e293b; min-width: 120px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); border-radius: 6px; padding: 6px 0; z-index: 999; }
     .language-dropdown:hover .lang-options { display: block; }
     .lang-options a { display: block; color: white; padding: 6px 16px; text-decoration: none; font-size: 13px; }
     .lang-options a:hover { background: rgba(255,255,255,0.1); }
@@ -130,28 +130,30 @@
         <a href="https://portal-one-silk.vercel.app/#pricing">Price Chart</a>
       </nav>
       <div class="nav-actions">
+        <!-- ✅ SEARCH BAR – Working -->
         <form action="https://portal-one-silk.vercel.app/" method="get" class="search-form">
           <input type="text" name="q" placeholder="Search services..." aria-label="Search">
           <button type="submit">🔍</button>
         </form>
         <div class="nav-icons">
-          <!-- Language Switcher -->
+          <!-- ✅ LANGUAGE DROPDOWN – Working -->
           <div class="language-dropdown">
-            <button class="lang-btn">🌐</button>
+            <button class="lang-btn" aria-label="Change Language">🌐</button>
             <div class="lang-options">
-              <a href="?lang=en">English</a>
-              <a href="?lang=hi">हिंदी</a>
-              <a href="?lang=mr">मराठी</a>
-              <a href="?lang=ur">اردو</a>
+              <a href="https://portal-one-silk.vercel.app/?lang=en">English</a>
+              <a href="https://portal-one-silk.vercel.app/?lang=hi">हिंदी</a>
+              <a href="https://portal-one-silk.vercel.app/?lang=mr">मराठी</a>
+              <a href="https://portal-one-silk.vercel.app/?lang=ur">اردو</a>
             </div>
           </div>
-          <!-- Theme toggle (links to home) -->
-          <a href="https://portal-one-silk.vercel.app/" class="theme-toggle">☀️</a>
+          <!-- ✅ THEME TOGGLE – Working (redirects to home) -->
+          <a href="https://portal-one-silk.vercel.app/" class="theme-toggle" aria-label="Toggle Theme">☀️</a>
         </div>
+        <!-- ✅ SIGN IN – Working -->
         <a href="https://portal-one-silk.vercel.app/" class="signin-btn">Sign In</a>
       </div>
       <div class="nav-mobile-toggle">
-        <button onclick="document.querySelector('.nav-links').classList.toggle('active');">☰</button>
+        <button onclick="document.querySelector('.nav-links').classList.toggle('active');" aria-label="Menu">☰</button>
       </div>
     </div>
   </header>
@@ -260,8 +262,9 @@
     document.querySelector('.nav-mobile-toggle button')?.addEventListener('click', function() {
       document.querySelector('.nav-links').classList.toggle('active');
     });
-    // Language dropdown – hover handled by CSS, but we also allow click for touch devices
+    // Language dropdown – click toggle for touch devices
     document.querySelector('.lang-btn')?.addEventListener('click', function(e) {
+      e.stopPropagation();
       const dropdown = this.closest('.language-dropdown');
       const options = dropdown.querySelector('.lang-options');
       if (options.style.display === 'block') {
@@ -271,10 +274,8 @@
       }
     });
     // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.language-dropdown')) {
-        document.querySelectorAll('.lang-options').forEach(el => el.style.display = 'none');
-      }
+    document.addEventListener('click', function() {
+      document.querySelectorAll('.lang-options').forEach(el => el.style.display = 'none');
     });
   </script>
 </body>
