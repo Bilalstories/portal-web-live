@@ -2,12 +2,25 @@
 <html>
 <head>
   <!-- ============================================================
-  ✅ GOOGLE SEARCH CONSOLE VERIFICATION (25 June)
+  ✅ GOOGLE SEARCH CONSOLE VERIFICATION
   ============================================================ -->
   <meta name="google-site-verification" content="BeJxpsZjWy79UcqTRaHvG5YuE5AIeC0UtPBNm9IUGrY">
+  
+  <!-- ============================================================
+  ✅ CSP (Content Security Policy) - FIXED for Firebase
+  ============================================================ -->
+  <meta http-equiv="Content-Security-Policy" 
+        content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; 
+                 connect-src * 'self' http://localhost:5000 http://127.0.0.1:5000 https://*.firebaseapp.com https://*.firebaseio.com https://*.firebasestorage.app https://*.googleapis.com https://*.google.com https://*.gstatic.com wss://*.firebaseio.com; 
+                 img-src * data: blob: https://*.firebasestorage.app https://*.googleusercontent.com https://*.blogger.com https://*.blogspot.com; 
+                 script-src 'self' 'unsafe-inline' 'unsafe-eval' https://apis.google.com https://www.gstatic.com https://*.googleapis.com https://www.googletagmanager.com https://cdn.jsdelivr.net; 
+                 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+                 font-src 'self' data: https://fonts.gstatic.com; 
+                 worker-src 'self' blob:; 
+                 media-src * data: blob:;">
 
   <!-- ============================================================
-  ✅ GOOGLE ANALYTICS GA4 (Measurement ID: G-2H6H6VVQDY)
+  ✅ GOOGLE ANALYTICS GA4
   ============================================================ -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2H6H6VVQDY"></script>
   <script>
@@ -26,12 +39,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
   <!-- ============================================================
-  ✅ TITLE – Google Search mein yeh dikhega
+  ✅ TITLE
   ============================================================ -->
   <title>Public Portal – Govt Services, Job Alerts, Wallet, Refer & Earn, Tools</title>
 
   <!-- ============================================================
-  ✅ SEO META TAGS – Expanded with all features
+  ✅ SEO META TAGS
   ============================================================ -->
   <meta name="description" content="Public Portal: Apply for govt & private services, job alerts, WhatsApp status downloader, refer & earn, app uploads, tool hub, complaint box, verify documents, wallet, transaction history, multi-language, help & support, notifications, tracking.">
   <meta name="keywords" content="Public Portal, government services, private services, job alerts, WhatsApp status downloader, refer earn, app upload, tool hub, complaint box, verify document, digital wallet, transaction history, multi language, help support, notifications, tracking, Sarkari seva">
