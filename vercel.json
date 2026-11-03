@@ -1,6 +1,5 @@
 {
-  "buildCommand": "node generate_pages.js && flutter build web --release --no-tree-shake-icons",
-  "outputDirectory": "build/web",
+  "outputDirectory": ".",
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
