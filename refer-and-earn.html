@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refer &amp; Earn - Earn up to ₹50K | Public Portal</title>
+  <meta name="description" content="Invite friends to Public Portal and earn wallet rewards on every approved lead. Track earnings and referral status in real-time.">
+  <meta name="keywords" content="refer and earn, referral program, invite friends, earn money, wallet rewards, public portal">
+  <link rel="canonical" href="https://portal-one-silk.vercel.app/refer-and-earn.html">
+  <meta property="og:title" content="Refer &amp; Earn - Earn up to ₹50K | Public Portal">
+  <meta property="og:description" content="Invite friends to Public Portal and earn wallet rewards on every approved lead. Track earnings and referral status in real-time.">
+  <meta property="og:url" content="https://portal-one-silk.vercel.app/refer-and-earn.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Public Portal">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+    .app-navbar { background: #0f172a; color: white; padding: 8px 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 1000; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .nav-logo a { display: flex; align-items: center; text-decoration: none; color: white; }
+    .nav-logo span { font-weight: 800; font-size: 18px; }
+    .nav-logo .p1 { color: #3b82f6; }
+    .nav-logo .p2 { color: #f97316; }
+    .nav-links { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; padding: 6px 10px; border-radius: 6px; transition: background 0.2s; }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.1); color: white; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .search-form { display: flex; align-items: center; background: rgba(255,255,255,0.15); border-radius: 8px; padding: 4px 8px; }
+    .search-form input { background: transparent; border: none; padding: 6px 8px; color: white; outline: none; font-size: 13px; width: 160px; }
+    .search-form input::placeholder { color: rgba(255,255,255,0.5); }
+    .search-form button { background: transparent; border: none; color: rgba(255,255,255,0.7); cursor: pointer; font-size: 16px; padding: 4px 6px; }
+    .nav-icons { display: flex; align-items: center; gap: 8px; }
+    .lang-btn { background: transparent; border: none; color: white; font-size: 18px; cursor: pointer; padding: 4px; }
+    .language-dropdown { position: relative; display: inline-block; }
+    .lang-options { display: none; position: absolute; right: 0; background: #1e293b; min-width: 120px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); border-radius: 6px; padding: 6px 0; z-index: 999; }
+    .language-dropdown:hover .lang-options { display: block; }
+    .lang-options a { display: block; color: white; padding: 6px 16px; text-decoration: none; font-size: 13px; }
+    .lang-options a:hover { background: rgba(255,255,255,0.1); }
+    .signin-btn { background: #2563eb; color: white; padding: 6px 16px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: background 0.2s; white-space: nowrap; }
+    .signin-btn:hover { background: #1d4ed8; }
+    .nav-mobile-toggle { display: none; }
+    .nav-mobile-toggle button { background: transparent; border: none; color: white; font-size: 24px; cursor: pointer; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+    .header { background: linear-gradient(135deg, #0f172a, #1e3a8a); color: white; padding: 40px 20px; text-align: center; border-radius: 16px; margin-bottom: 30px; }
+    .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+    .header p { color: #94a3b8; }
+    .header .breadcrumb { font-size: 14px; color: #94a3b8; margin-top: 10px; }
+    .header .breadcrumb a { color: #60a5fa; text-decoration: none; }
+    .card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 20px; border: 1px solid #e2e8f0; }
+    .card h2 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #0f172a; }
+    .card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #0f172a; }
+    .card p { color: #475569; margin-bottom: 12px; }
+    .price-badge { display: inline-block; background: #dcfce7; color: #16a34a; padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 14px; }
+    .btn { display: inline-block; background: #2563eb; color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; border: none; cursor: pointer; font-size: 14px; transition: background 0.2s; }
+    .btn:hover { background: #1d4ed8; }
+    .btn-secondary { background: #e2e8f0; color: #0f172a; }
+    .btn-secondary:hover { background: #cbd5e1; }
+    .btn-green { background: #16a34a; }
+    .btn-green:hover { background: #15803d; }
+    .btn-red { background: #dc2626; }
+    .btn-red:hover { background: #b91c1c; }
+    .btn-app { display: inline-block; background: #2563eb; color: white; padding: 14px 32px; border-radius: 10px; font-weight: 700; text-decoration: none; margin-top: 10px; transition: background 0.3s; }
+    .btn-app:hover { background: #1d4ed8; }
+    .faq-item { border-bottom: 1px solid #f1f5f9; padding: 12px 0; }
+    .faq-item strong { display: block; color: #0f172a; }
+    .faq-item p { margin-top: 4px; color: #64748b; font-size: 14px; }
+    .faq-item:last-child { border-bottom: none; }
+    .grid { display: grid; gap: 16px; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .tile { background: white; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; display: block; }
+    .tile:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .tile-icon { font-size: 32px; margin-bottom: 10px; }
+    .tile h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .tile p { font-size: 13px; color: #64748b; }
+    .tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; background: #eff6ff; color: #2563eb; margin: 3px 4px 3px 0; }
+    .job-card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px; background: white; margin-bottom: 14px; transition: border-color 0.2s; }
+    .job-card:hover { border-color: #2563eb; }
+    .job-card h3 { color: #0f172a; font-size: 17px; margin-bottom: 6px; }
+    .job-meta { color: #64748b; font-size: 13px; margin-bottom: 8px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .job-meta span { display: inline-flex; align-items: center; gap: 4px; }
+    .empty-state { text-align: center; padding: 40px 20px; color: #94a3b8; }
+    .empty-state div:first-child { font-size: 48px; margin-bottom: 12px; }
+    .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .filter-chip { background: white; border: 1px solid #e2e8f0; padding: 6px 14px; border-radius: 20px; font-size: 13px; cursor: pointer; transition: all 0.2s; }
+    .filter-chip.active, .filter-chip:hover { background: #2563eb; color: white; border-color: #2563eb; }
+    .promo-banner { background: linear-gradient(135deg, #0039A6, #0056D2, #2196F3); border-radius: 22px; padding: 24px; color: white; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(0,86,210,0.3); }
+    .promo-banner h2 { color: white; font-size: 26px; margin-bottom: 4px; }
+    .promo-banner .subtitle { color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+    .promo-banner .earn-amount { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; }
+    .promo-actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .promo-actions a { flex: 1; min-width: 140px; text-align: center; padding: 12px; border-radius: 12px; font-weight: 700; font-size: 13px; text-decoration: none; }
+    .promo-actions .primary { background: white; color: #0056D2; }
+    .promo-actions .secondary { background: rgba(255,255,255,0.18); color: white; }
+    .stats-bar { display: flex; justify-content: space-around; background: white; border-radius: 16px; padding: 16px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .stats-bar .stat { text-align: center; }
+    .stats-bar .stat .value { font-size: 18px; font-weight: 900; }
+    .stats-bar .stat .label { font-size: 11px; color: #64748b; margin-top: 2px; }
+    .stats-bar .stat.green .value { color: #16a34a; }
+    .stats-bar .stat.orange .value { color: #f97316; }
+    .stats-bar .stat.red .value { color: #dc2626; }
+    .disclaimer-banner { background: #b91c1c; color: white; padding: 10px 16px; text-align: center; font-size: 11px; font-weight: 600; border-radius: 8px; margin-bottom: 20px; }
+    .channel-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+    .channel-btns a { flex: 1; min-width: 140px; padding: 12px; border-radius: 10px; text-align: center; font-weight: 700; text-decoration: none; font-size: 14px; border: 2px solid; background: white; }
+    .channel-btns .wa { color: #16a34a; border-color: #16a34a; }
+    .channel-btns .wa:hover { background: #16a34a; color: white; }
+    .channel-btns .tg { color: #2563eb; border-color: #2563eb; }
+    .channel-btns .tg:hover { background: #2563eb; color: white; }
+    .channel-btns .yt { color: #dc2626; border-color: #dc2626; }
+    .channel-btns .yt:hover { background: #dc2626; color: white; }
+    .site-footer { background: #0f172a; color: #94a3b8; margin-top: 40px; padding: 40px 20px 20px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+    .footer-col h4 { color: white; margin-bottom: 10px; font-size: 15px; }
+    .footer-col p { font-size: 13px; }
+    .footer-col a { display: block; color: #94a3b8; text-decoration: none; font-size: 13px; padding: 3px 0; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { text-align: center; border-top: 1px solid #1e293b; margin-top: 30px; padding-top: 16px; font-size: 12px; }
+    @media (max-width: 768px) {
+      .app-navbar { padding: 8px 15px; }
+      .nav-links { display: none; flex-direction: column; width: 100%; padding: 10px 0; }
+      .nav-links.active { display: flex; }
+      .nav-links a { padding: 8px 0; width: 100%; text-align: center; }
+      .nav-actions { display: none; }
+      .nav-mobile-toggle { display: block; }
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .header h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="app-navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="https://portal-one-silk.vercel.app/">
+          <span><span class="p1">P</span>ublic <span class="p2">P</span>ortal</span>
+        </a>
+      </div>
+      <nav class="nav-links">
+        <a href="https://portal-one-silk.vercel.app/" class="">Home</a>
+        <a href="https://portal-one-silk.vercel.app/job-alerts.html" class="">Job Alerts</a>
+        <a href="https://portal-one-silk.vercel.app/tool-hub.html" class="">Tool Hub</a>
+        <a href="https://portal-one-silk.vercel.app/refer-and-earn.html" class="active">Refer & Earn</a>
+        <a href="https://portal-one-silk.vercel.app/our-apps.html" class="">Our Apps</a>
+        <a href="https://portal-one-silk.vercel.app/categories.html" class="">Categories</a>
+      </nav>
+      <div class="nav-actions">
+        <form action="https://portal-one-silk.vercel.app/search.html" method="get" class="search-form">
+          <input type="text" name="q" placeholder="Search services..." aria-label="Search">
+          <button type="submit">🔍</button>
+        </form>
+        <div class="nav-icons">
+          <div class="language-dropdown">
+            <button class="lang-btn" aria-label="Language">🌐</button>
+            <div class="lang-options">
+              <a href="?lang=en">English</a>
+              <a href="?lang=hi">हिंदी</a>
+              <a href="?lang=mr">मराठी</a>
+              <a href="?lang=ur">اردو</a>
+            </div>
+          </div>
+        </div>
+        <a href="https://portal-one-silk.vercel.app/" class="signin-btn">Sign In</a>
+      </div>
+      <div class="nav-mobile-toggle">
+        <button onclick="document.querySelector('.nav-links').classList.toggle('active');" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+  
+  
+  <div class="container">
+    <div class="header">
+      <div class="breadcrumb"><a href="https://portal-one-silk.vercel.app/">Home</a> › Refer & Earn</div>
+      <h1>💰 Refer & Earn</h1>
+      <p>Invite friends, earn rewards — up to ₹10,933</p>
+    </div>
+
+    <div class="disclaimer-banner">
+      ⚠️ DISCLAIMER: We are not affiliated with any government or bank. We only share third-party referral links for informational purposes. All products/services are shared as affiliate/referral links.
+    </div>
+
+    <div class="promo-banner">
+      <div class="subtitle">🏦 Public Portal - Refer & Earn</div>
+      <div class="earn-amount">Earn up to ₹10,933</div>
+      <div class="subtitle" style="margin-top:6px;">29 active services available</div>
+      <div class="promo-actions">
+        <a class="primary" href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank">💰 My Earnings</a>
+        <a class="secondary" href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank">🎯 Track Lead</a>
+      </div>
+    </div>
+
+    <h2 style="margin:30px 0 16px;font-size:22px;">How It Works</h2>
+    <div class="grid grid-3">
+    <div class="card" style="text-align:center;">
+      <div style="font-size:42px;font-weight:800;color:#2563eb;">1</div>
+      <h3>Share Your Link</h3>
+      <p>Invite friends using our referral service links.</p>
+    </div>
+  
+    <div class="card" style="text-align:center;">
+      <div style="font-size:42px;font-weight:800;color:#2563eb;">2</div>
+      <h3>Friend Applies</h3>
+      <p>Your friend completes the service using your link.</p>
+    </div>
+  
+    <div class="card" style="text-align:center;">
+      <div style="font-size:42px;font-weight:800;color:#2563eb;">3</div>
+      <h3>Earn Payout</h3>
+      <p>Track your lead — get paid when approved!</p>
+    </div>
+  </div>
+
+    <h2 style="margin:40px 0 16px;font-size:22px;">📋 Available Referral Services</h2>
+    <div class="job-card">
+      <h3>Gro Score</h3>
+      <div class="job-meta">
+        <span>📂 Instant Deals</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹100</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">🚨 Loan or credit card getting rejected?
+
+Find out the exact reason — and get approved next time! ✅
+
+✨ Just ₹9 for 3 days — no documents, no income proof, no branch visit
+
+📊…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://groscore.in/refer?gp=6JLZ3372" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Navi UPI Pay App</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹49</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">Navi ek digital financial services app hai jisme UPI payments, money transfer, loans, insurance aur investment related features available hote hain. Ye app simple interface aur fas…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://r.navi.com/CQCnYB" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>CRED UPI Payment App</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹150</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">CRED ek premium financial app hai jo mainly credit card bill payment aur rewards system ke liye popular hai. Is app ke through users apne credit card bills pay kar sakte hain, spen…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://app.cred.club/spQx/ytuy8pt2." target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Google Pay Invite</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹79</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">Google Pay ek secure UPI payment app hai jiske through users direct bank account se money transfer, recharge, bill payment aur online payments kar sakte hain. Ye app simple interfa…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://gpay.app.goo.gl/invite-n6vw3v to enjoy your reward." target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Airtel Payment Bank</h3>
+      <div class="job-meta">
+        <span>📂 Bank Accounts</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹140</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">Airtel Payments Bank Zero Balance Account ek digital savings account hai jisme minimum balance maintain karna zaroori nahi hota. Ye account mainly mobile-based banking aur fast dig…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://leads.banksathi.com/?h=T1JINHdyYkc5cEU3K29jaTlRMzIrUT09" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Paytm App</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹100</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">Paytm ek popular digital payment aur financial services app hai jiske through users UPI payments, mobile recharge, electricity bill payment, ticket booking, FASTag recharge aur onl…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://p.paytm.me/xCTH/aktbwll0?utmt=061021" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>super.money</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹50</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">super.money ek UPI-based digital payment app hai jo fast money transfer, QR payments aur reward-focused features provide karta hai. Ye app simple UPI experience ke saath cashback a…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://link.super.money/byPvhU2vcXb" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Google Pay Welcome Back Invite</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹10</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">if you don&#39;t use Google pay since last 6 month then use this apply now and get 10 rupees form Public Portal App</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://gpay.app.goo.gl/invite-n6vw3v" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Airtel Prepaid</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹50</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">I’ve got you a gift - ₹50 off 🎁 
+
+Use my referral link u.airtel.in/JYj8f4,  and save ₹50 when you join. 
+
+Enjoy a seamless network experience with Airtel Prepaid. 
+
+Get home deliv…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="u.airtel.in/JYj8f4," target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Super.Money Invite Any</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹15</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">Hey! Been using super.money lately — *pretty smooth for UPI*.
+
+They’ve got a small *welcome perk: ₹15 cash* 🎁 after your first payment.
+
+Thought I’d share 🙂
+https://link.super.mo…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://link.super.money/ZsgcLKVBRZb" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Vi Prepaid</h3>
+      <div class="job-meta">
+        <span>📂 Instant Deals</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹150</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">🔥 Vi Prepaid - Best Deal Alert! 🔥
+
+✅ High-speed 5G/4G data
+✅ Unlimited calling + SMS
+✅ OTT benefits (Movies &amp; TV)
+✅ Affordable plans, something for everyone
+
+If you&#39;re thi…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://sales.gromo.in/vf/La9ZuQxlkM" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Kotak 811 Saving Account (Zero Balance)</h3>
+      <div class="job-meta">
+        <span>📂 Bank Accounts</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹300</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">💰 *Enjoy Unlimited Banking with Kotak 811 Zero Balance Account!* 💳
+
+✔️ Zero Balance Savings Account
+✔️ Get up to ₹6000 Cashback on transactions
+✔️ Premium Platinum Debit Card…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://leads.banksathi.com/?h=TFhtNm5ZbjhPRlZzUzB5QXEzQzFWQT09" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>DBS digibank Savings Account</h3>
+      <div class="job-meta">
+        <span>📂 Bank Accounts</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹100</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">✨ *DBS digibank Savings Account* – Smart Banking at Your Fingertips!
+
+📈 Earn up to 5.5% p.a. on Savings
+💰 ₹300 Welcome Cashback 
+🔄 Zero-Fee Fund Transfers – Enjoy 24x7 free …</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://leads.banksathi.com/?h=M2NYcUl4dWJ0RnJrWlhzQ2wwWlhWdz09" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Nissan Magnite</h3>
+      <div class="job-meta">
+        <span>📂 Car</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹6500</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">🚗 *Introducing the Bold &amp; Smart Nissan Magnite*
+
+✨ Eye-catching SUV design
+⚡ Turbocharged performance
+📱 Smart connected features
+🛡️ Advanced safety
+
+🎁 Exchange benefits …</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://leads.banksathi.com/?h=NkdsTzg1S0tSU0dsK0IrNEI0eUpQdz09" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Airtel DTH</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹200</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">I’ve got you a gift - ₹200 off🎁 
+
+Use my referral link u.airtel.in/OfJk7f,  and save ₹200 when you join. 
+
+Experience the world of entertainment with Airtel Digital TV &amp; get over …</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="u.airtel.in/OfJk7f," target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>BHIM</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹100</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">BHIM (Bharat Interface for Money) ek official UPI payment app hai jo National Payments Corporation of India (NPCI) dwara develop ki gayi hai. Is app ke through users direct bank-to…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://bhimnpci.page.link/app" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>PhonePe</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹100</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">PhonePe ek popular UPI payment app hai jiske through users money transfer, mobile recharge, electricity bill payment, gas bill, DTH recharge, FASTag recharge, insurance payment aur…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://phon.pe/x1r7cbpq" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Equitas Small Finance Bank Zero Balance Account</h3>
+      <div class="job-meta">
+        <span>📂 Bank Accounts</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹200</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">Equitas Zero Balance Account ek digital savings account hai jisme minimum balance maintain karna zaroori nahi hota. Ye account mainly easy banking, fast online opening, aur daily t…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://leads.banksathi.com/?h=NXZKUnhwRjlUSkxuZ1U3b0lBZnJDdz09" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Paytm Rejoin App</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹100</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">Hey,
+
+I am using Paytm for UPI, recharge and bill payments.
+
+You can sign up with my code 7276263372 and get up to ₹100 cashback plus ₹50 Recharge voucher on your first UPI payment…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://p.paytm.me/xCTH/aktbwll0?utmt=061021" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Ajio Shopping App</h3>
+      <div class="job-meta">
+        <span>📂 Shopping</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹100</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">get Upto 100 rupees cashback on using public portal ajio refer earn program 
+
+refer &amp; earn ajio shopping app</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://ajioapps.onelink.me/ybtf/6fe2odql" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Kotak Mahindra Super Saving Account (Zero Balance)</h3>
+      <div class="job-meta">
+        <span>📂 Bank Accounts</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹500</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">🌟 Why Choose Kotak 811 Super Savings Account?
+
+💰 Get up to ₹6,000 cashback on debit card spends*
+💳 Free Platinum Debit Card
+🏧 Higher ATM withdrawal limit – up to ₹1 lakh/da…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://leads.banksathi.com/?h=YWNUQ2g1NzhkM05yWWl0L05kalcwQT09" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Jio Payments Bank Zero Balance Account</h3>
+      <div class="job-meta">
+        <span>📂 Bank Accounts</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹100</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">Jio Payments Bank Zero Balance Account ek digital savings account hai jisme minimum balance maintain karna zaroori nahi hota. Ye account mainly mobile banking aur online transactio…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://leads.banksathi.com/?h=STN6dHluNi94RnB4M2JzOFVFbkRldz09" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Amazon Pay</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹25</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">Amazon Pay ek digital payment service hai jo Amazon ecosystem ke andar payments aur UPI transactions ke liye use hoti hai. Iske through users money transfer, mobile recharge, elect…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Airtel Wifi</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹200</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">₹200 OFF is waiting for you 🎁
+Use my referral link - u.airtel.in/8nPFKL to get a new Airtel Wi-Fi &amp; save ₹300 on your first Wi-Fi bill.
+
+Unlock ₹100 off every month, along-with up…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="u.airtel.in/8nPFKL" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Snabbit</h3>
+      <div class="job-meta">
+        <span>📂 Instant Deals</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹1000</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">🏠 Maid on leave? Chores piling up?
+
+Get trusted house help at your doorstep in just 10 minutes with Snabbit ⚡
+
+✅ Trained &amp; background-verified experts
+✅ Bathroom &amp; kitchen cl…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://sales.gromo.in/qp/La9ZuQxlkM" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>LXME</h3>
+      <div class="job-meta">
+        <span>📂 Instant Deals</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹100</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">Hi! 👋
+Check out *LXME* – a smart money app for women💜
+
+💰 Earn FREE Digital Gold on UPI spends
+📈 Expert-picked Mutual Funds &amp; SIPs
+📊 Easy budgeting &amp; expense tracking
+
+S…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://sales.gromo.in/lu/La9ZuQxlkM" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Airtel Postpaid</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹200</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">I’ve got you a gift - ₹200 off🎁 
+
+Use my referral link u.airtel.in/4VQUg9,  and save ₹200 when you join. 
+
+Enjoy no daily data limit, Amazon Prime and Disney+ Hotstar subscription…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="u.airtel.in/4VQUg9," target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Rapido Ride App</h3>
+      <div class="job-meta">
+        <span>📂 Ride</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹15</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">Join millions of users in 100+ cities &amp; ride with Rapido every day!
+
+Get guaranteed ₹15 cashback &amp; discounts on Bike-Taxi or Auto rides.
+
+Use referral code CFIJZ0L &amp; get cashback o…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="https://m.rapido.cc/Ewte/irojq0fa" target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div><div class="job-card">
+      <h3>Airtel Black</h3>
+      <div class="job-meta">
+        <span>📂 UPI Payment Apps</span>
+        <span style="color:#16a34a;font-weight:700;">💰 Earn up to ₹200</span>
+      </div>
+      <p style="color:#475569;font-size:14px;">I’ve got you a gift - ₹200 off🎁 
+
+Just use my referral link u.airtel.in/Ra9UtQ,  save ₹200 when you join. 
+
+Enjoy freedom from multiple bills, 24x7 customer support &amp; priority res…</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="u.airtel.in/Ra9UtQ," target="_blank" class="btn btn-green">🔗 Refer Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank" class="btn">📲 Get App</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>❓ FAQs</h2>
+      <div class="faq-item"><strong>How do I start referring?</strong><p>Open the app → go to Refer &amp; Earn → browse available services → share the referral link with your friends.</p></div><div class="faq-item"><strong>How much can I earn?</strong><p>You can earn up to ₹10,933 by referring across all available services.</p></div><div class="faq-item"><strong>When do I get paid?</strong><p>Payouts are credited to your wallet once your referral lead is approved by the service provider.</p></div><div class="faq-item"><strong>How can I track my leads?</strong><p>Use the &quot;Track Lead&quot; feature in the app — enter your lead ID or view all submissions under My Earnings.</p></div><div class="faq-item"><strong>What are the lead statuses?</strong><p>Each referral goes through: Pending → Approved or Rejected. You will be notified on status changes.</p></div><div class="faq-item"><strong>Is there a limit on referrals?</strong><p>No limit! Refer as many times as you want across all services.</p></div>
+    </div>
+  </div>
+  
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Public Portal</h4>
+        <p>Government & digital services, job alerts, utility tools, and earning — all in one app.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="https://portal-one-silk.vercel.app/categories.html">All Categories</a>
+        <a href="https://portal-one-silk.vercel.app/job-alerts.html">Job Alerts</a>
+        <a href="https://portal-one-silk.vercel.app/tool-hub.html">Tool Hub</a>
+        <a href="https://portal-one-silk.vercel.app/refer-and-earn.html">Refer & Earn</a>
+        <a href="https://portal-one-silk.vercel.app/our-apps.html">Our Apps</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="https://portal-one-silk.vercel.app/about.html">About Us</a>
+        <a href="https://portal-one-silk.vercel.app/privacy.html">Privacy Policy</a>
+        <a href="https://portal-one-silk.vercel.app/terms.html">Terms</a>
+        <a href="https://portal-one-silk.vercel.app/refund.html">Refund Policy</a>
+        <a href="https://portal-one-silk.vercel.app/disclaimer.html">Disclaimer</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://whatsapp.com/channel/0029VbBpgWQKAwEexhXQET2K" target="_blank">WhatsApp Channel</a>
+        <a href="https://t.me/+JH5LU52-PZdmNDI1" target="_blank">Telegram Channel</a>
+        <a href="https://play.google.com/store/apps/details?id=com.publicportal.gms" target="_blank">Download App</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Public Portal. All Rights Reserved. Independent private service provider. Not affiliated with any government entity.
+    </div>
+  </footer>
+  
+  
+  <script>
+    document.querySelector('.lang-btn')?.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const opts = this.nextElementSibling;
+      opts.style.display = opts.style.display === 'block' ? 'none' : 'block';
+    });
+    document.addEventListener('click', function() {
+      document.querySelectorAll('.lang-options').forEach(el => el.style.display = 'none');
+    });
+  </script>
+</body>
+</html>
